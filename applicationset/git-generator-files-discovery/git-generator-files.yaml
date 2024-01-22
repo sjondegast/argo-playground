@@ -2,26 +2,32 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   name: guestbook
-  # namespace: argocd
+  namespace: argocd
 spec:
   goTemplate: true
   goTemplateOptions: ["missingkey=error"]
   generators:
     - git:
-        repoURL: git@gitlab.com:kubelab-gitops-playground/argocd-infrastructure-design.git
+        repoURL: https://github.com/sjondegast/argo-playground.git
         revision: HEAD
         files:
-        - path: "examples/applicationset/git-generator-files-discovery/cluster-config/**/config.json"
+        - path: "applicationset/git-generator-files-discovery/cluster-config/**/config.json"
   template:
     metadata:
       name: '{{.cluster.name}}-guestbook'
     spec:
       project: default
       source:
-        repoURL: git@gitlab.com:kubelab-gitops-playground/argocd-infrastructure-design.git
+        repoURL: https://github.com/sjondegast/argo-playground.git
         targetRevision: HEAD
-        path: "examples/applicationset/git-generator-files-discovery/apps/guestbook"
+        path: "applicationset/git-generator-files-discovery/apps/guestbook"
       destination:
         server: https://kubernetes.default.svc
         #server: '{{.cluster.address}}'
         namespace: guestbook
+      syncPolicy:
+        syncOptions:
+          - CreateNamespace=true
+        automated:
+          prune: true
+          selfHeal: true
