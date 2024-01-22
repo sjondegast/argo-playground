@@ -8,17 +8,17 @@ spec:
   goTemplateOptions: ["missingkey=error"]
   generators:
   - git:
-      repoURL: git@gitlab.com:kubelab-gitops-playground/argocd-infrastructure-design.git
+      repoURL: https://github.com/sjondegast/argo-playground.git
       revision: HEAD
       directories:
-      - path: examples/applicationset/git-generator-directory/cluster-addons/*
+      - path: applicationset/git-generator-directory/cluster-addons/*
   template:
     metadata:
       name: '{{.path.basename}}'
     spec:
       project: default
       source:
-        repoURL: git@gitlab.com:kubelab-gitops-playground/argocd-infrastructure-design.git
+        repoURL: https://github.com/sjondegast/argo-playground.git
         targetRevision: HEAD
         path: '{{.path.path}}'
       destination:
