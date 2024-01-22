@@ -14,6 +14,8 @@ spec:
       - path: applicationset/git-generator-directory/cluster-addons/*
       - exclude: true
         path: applicationset/git-generator-directory/cluster-addons/prometheus-operator
+      - exclude: true
+        path: applicationset/git-generator-directory/cluster-addons/metrics-server
   template:
     metadata:
       name: '{{.path.basename}}'
