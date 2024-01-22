@@ -1,0 +1,4 @@
+dependencies:
+- name: metrics-server
+  version: 6.8.0
+  repository: https://charts.bitnami.com/bitnami
