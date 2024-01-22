@@ -1,0 +1,4 @@
+dependencies:
+- name: grafana-operator
+  version: 3.7.0
+  repository: https://charts.bitnami.com/bitnami
