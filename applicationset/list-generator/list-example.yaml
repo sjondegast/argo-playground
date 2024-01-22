@@ -1,0 +1,31 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: guestbook
+  namespace: argocd
+spec:
+  goTemplate: true
+  goTemplateOptions: ["missingkey=error"]
+  generators:
+    - list:
+        elements:
+          - cluster: engineering-dev
+            url: https://kubernetes.default.svc
+  template:
+    metadata:
+      name: "{{.cluster}}-guestbook"
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/sjondegast/argo-playground.git
+        targetRevision: HEAD
+        path: applicationset/list-generator/guestbook/{{.cluster}}
+      destination:
+        server: "{{.url}}"
+        namespace: guestbook
+      syncPolicy:
+        syncOptions:
+          - CreateNamespace=true
+        automated:
+          prune: true
+          selfHeal: true

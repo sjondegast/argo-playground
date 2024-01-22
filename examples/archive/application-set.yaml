@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: argo-workflows
+spec:
+  generators:
+  - clusters: {} 
+  template: 
+    metadata:
+      name: '{{name}}-argo-workflows'
+    spec:
+      project: "default"
+      source:
+        repoURL: https://github.com/surenraju/argo-workflows-manifest.git
+        targetRevision: HEAD
+        path: kubernetes
+      destination:
+        server: '{{server}}'
+        namespace: argo
+      syncPolicy:
+        syncOptions:    
+        - CreateNamespace=true
+        automated:
+          prune: true
+          selfHeal: true

@@ -1,0 +1,67 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: cluster-addons
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  generators:
+  - git:
+      repoURL: git@gitlab.com:sdgast/gitops-argocd.git
+      revision: HEAD
+      directories:
+      - path: cluster-deployment-v1/add-ons/*
+  # - clusters: {}
+  template:
+    metadata: 
+      # name: '{{name}}'
+      name: '{{.path.basename}}'
+    spec:
+      project: "default"
+      source:
+        repoURL: git@gitlab.com:sdgast/gitops-argocd.git # TODO: change this to correct repo
+        targetRevision: HEAD
+        # path: cluster-deployment-v1/add-ons/*
+        path: '{{.path.path}}'
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: '{{.path.basename}}'
+      syncPolicy:
+        syncOptions:
+        - CreateNamespace=true
+        automated:
+            prune: true
+            selfHeal: true
+
+# ---
+# apiVersion: argoproj.io/v1alpha1
+# kind: ApplicationSet
+# metadata:
+#   name: cluster-addons
+#   namespace: argocd
+# spec:
+#   goTemplate: true
+#   goTemplateOptions: ["missingkey=error"]
+#   generators:
+#   - git:
+#       repoURL: https://github.com/argoproj/argo-cd.git
+#       revision: HEAD
+#       directories:
+#       - path: applicationset/examples/git-generator-directory/cluster-addons/*
+#   template:
+#     metadata:
+#       name: '{{.path.basename}}'
+#     spec:
+#       project: "my-project"
+#       source:
+#         repoURL: https://github.com/argoproj/argo-cd.git
+#         targetRevision: HEAD
+#         path: '{{.path.path}}'
+#       destination:
+#         server: https://kubernetes.default.svc
+#         namespace: '{{.path.basename}}'
+#       syncPolicy:
+#         syncOptions:
+#         - CreateNamespace=true

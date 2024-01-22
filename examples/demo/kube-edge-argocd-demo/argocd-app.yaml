@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx-edge
+  namespace: argocd
+spec:
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    # path to the folder with the YAML manifests
+    path: cluster-deployment-v1/demo/kube-edge-argocd-demo/manifests
+    # repoURL: https://github.com/kgamanji/kube-edge-argocd-demo
+    repoURL: git@gitlab.com:kubelab-gitops-playground/argocd-infrastructure-design.git
+    targetRevision: HEAD
+  # Sync policy
+  syncPolicy:
+    automated: {}
