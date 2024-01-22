@@ -12,6 +12,8 @@ spec:
       revision: HEAD
       directories:
       - path: applicationset/git-generator-directory/cluster-addons/*
+      - exclude: true
+        path: applicationset/git-generator-directory/cluster-addons/prometheus-operator
   template:
     metadata:
       name: '{{.path.basename}}'
