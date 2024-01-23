@@ -1,0 +1,9 @@
+[submodule "vendors/argocd-example-apps"]
+	path = vendors/argocd-example-apps
+	url = https://github.com/argoproj/argocd-example-apps.git
+[submodule "vendors/kube-edge-argocd-demo"]
+	path = vendors/kube-edge-argocd-demo
+	url = https://github.com/kgamanji/kube-edge-argocd-demo.git
+[submodule "vendors/argoproj-deployments"]
+	path = vendors/argoproj-deployments
+	url = https://github.com/argoproj/argoproj-deployments.git
