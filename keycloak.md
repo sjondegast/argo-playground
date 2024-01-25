@@ -1,6 +1,7 @@
 # Keycloak
 
-https://github.com/argoproj/argo-cd/raw/2d6ce088acd4fb29271ffb6f6023dbb27594d59b/docs/operator-manual/user-management/keycloak.md
+- https://github.com/argoproj/argo-cd/raw/2d6ce088acd4fb29271ffb6f6023dbb27594d59b/docs/operator-manual/user-management/keycloak.md
+- https://argo-cd.readthedocs.io/en/release-2.0/operator-manual/user-management/keycloak/
 
 # Integrating Keycloak and ArgoCD
 

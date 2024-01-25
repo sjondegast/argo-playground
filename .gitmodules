@@ -7,3 +7,15 @@
 [submodule "vendors/argoproj-deployments"]
 	path = vendors/argoproj-deployments
 	url = https://github.com/argoproj/argoproj-deployments.git
+[submodule "vendors/argocd-image-updater"]
+	path = vendors/argocd-image-updater
+	url = https://github.com/argoproj-labs/argocd-image-updater.git
+[submodule "vendors/kustomize"]
+	path = vendors/kustomize
+	url = https://github.com/kubernetes-sigs/kustomize.git
+[submodule "vendors/learn-vault-external-kubernetes"]
+	path = vendors/learn-vault-external-kubernetes
+	url = https://github.com/hashicorp-education/learn-vault-external-kubernetes.git
+[submodule "vendors/learn-vault-secrets-operator"]
+	path = vendors/learn-vault-secrets-operator
+	url = https://github.com/hashicorp-education/learn-vault-secrets-operator.git
