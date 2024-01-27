@@ -2,7 +2,18 @@
 
 ## Setup Keycloak
 
+## Keycloak Helm Chart
+
 - [artifacthub.io, bitnami keycloak](https://artifacthub.io/packages/helm/bitnami/keycloak)
+
+### Keycloak Operator Installation
+
+Installing by using kubectl without Operator Lifecycle Manager
+
+
+
+- [keycloak docs, operator installation](https://www.keycloak.org/operator/installation)
+- [Artifacthub, keycloak operator](https://artifacthub.io/packages/olm/community-operators/keycloak-operator)
 
 ## Integrating Keycloak and ArgoCD
 
