@@ -1,4 +1,0 @@
-dependencies:
-- name: keycloak
-  version: 18.3.1
-  repository: https://charts.bitnami.com/bitnami
