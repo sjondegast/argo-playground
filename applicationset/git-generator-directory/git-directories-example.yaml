@@ -16,6 +16,10 @@ spec:
         path: applicationset/git-generator-directory/cluster-addons/prometheus-operator
       - exclude: true
         path: applicationset/git-generator-directory/cluster-addons/metrics-server
+      - exclude: true
+        path: applicationset/git-generator-directory/cluster-addons/cert-manager
+      - exclude: true
+        path: applicationset/git-generator-directory/cluster-addons/keycloak
   template:
     metadata:
       name: '{{.path.basename}}'
