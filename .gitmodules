@@ -19,3 +19,6 @@
 [submodule "vendors/learn-vault-secrets-operator"]
 	path = vendors/learn-vault-secrets-operator
 	url = https://github.com/hashicorp-education/learn-vault-secrets-operator.git
+[submodule "vendors/kind-playground"]
+	path = vendors/kind-playground
+	url = https://github.com/eddycharly/kind-playground.git
