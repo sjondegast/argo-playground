@@ -34,3 +34,6 @@
 [submodule "vendors/awesome-argo"]
 	path = vendors/awesome-argo
 	url = https://github.com/akuity/awesome-argo.git
+[submodule "vendors/argocd-self-manage"]
+	path = vendors/argocd-self-manage
+	url = https://github.com/bukurt/argocd.git
