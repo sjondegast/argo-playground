@@ -28,3 +28,9 @@
 [submodule "vendors/multicloud-operators-application"]
 	path = vendors/multicloud-operators-application
 	url = https://github.com/stolostron/multicloud-operators-application.git
+[submodule "vendors/argocd-app-of-apps-parent"]
+	path = vendors/argocd-app-of-apps-parent
+	url = https://github.com/d0-labs/argocd-app-of-apps-parent.git
+[submodule "vendors/awesome-argo"]
+	path = vendors/awesome-argo
+	url = https://github.com/akuity/awesome-argo.git
