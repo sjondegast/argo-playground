@@ -25,3 +25,6 @@
 [submodule "vendors/argo-cd"]
 	path = vendors/argo-cd
 	url = https://github.com/argoproj/argo-cd.git
+[submodule "vendors/multicloud-operators-application"]
+	path = vendors/multicloud-operators-application
+	url = https://github.com/stolostron/multicloud-operators-application.git
