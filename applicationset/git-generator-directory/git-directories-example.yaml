@@ -22,6 +22,8 @@ spec:
         path: applicationset/git-generator-directory/cluster-addons/cert-manager
       - exclude: true
         path: applicationset/git-generator-directory/cluster-addons/keycloak
+      - exclude: true
+        path: applicationset/git-generator-directory/cluster-addons/keycloak-operator
   template:
     metadata:
       name: '{{.path.basename}}'
