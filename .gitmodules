@@ -37,3 +37,6 @@
 [submodule "vendors/argocd-self-manage"]
 	path = vendors/argocd-self-manage
 	url = https://github.com/bukurt/argocd.git
+[submodule "vendors/argocd-self-manage-kaio6fellipe"]
+	path = vendors/argocd-self-manage-kaio6fellipe
+	url = https://github.com/kaio6fellipe/argo.git
